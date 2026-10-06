@@ -20,7 +20,7 @@
                     colors: {
                         vinova: {
                             navy: '#1A4168',      // Primary navy blue from logo
-                            navyDark: '#102A45',  // Darker navy for hero overlays
+                            navyDark: '#102A45',  // Darker navy for overlays
                             orange: '#E87332',    // Accent terracotta/orange from logo
                             orangeLight: '#FFF5EF',
                             orangeHover: '#D66223',
@@ -40,8 +40,9 @@
 
     <style>
         .hero-bg {
-            background-image: linear-gradient(180deg, rgba(16, 42, 69, 0.82) 0%, rgba(26, 65, 104, 0.90) 100%), 
-                              url('https://images.unsplash.com/photo-1506377247377-2a5b3b417ebb?q=80&w=1920&auto=format&fit=crop');
+            /* Overlay très léger pour laisser l'image du vignoble et des bulles très visible */
+            background-image: linear-gradient(180deg, rgba(16, 42, 69, 0.45) 0%, rgba(26, 65, 104, 0.65) 100%), 
+                              url('https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?q=80&w=1920&auto=format&fit=crop');
             background-size: cover;
             background-position: center;
         }
@@ -59,16 +60,12 @@
 </head>
 <body class="bg-vinova-cream text-slate-800 font-sans antialiased selection:bg-vinova-orange selection:text-white">
 
+    <!-- HEADER SANS LOGO (NAVIGATION SEULEMENT) -->
     <header class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-200 text-vinova-navy shadow-sm transition-all duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
             
-            <!-- Vinova Solutions Logo -->
-            <a href="#" class="flex items-center gap-3 group">
-                <img src="VS LOGO 02 fr.png" alt="Vinova Solutions Logo" class="h-10 sm:h-12 w-auto object-contain transition-transform group-hover:scale-105" onerror="this.onerror=null; this.src='https://placehold.co/240x80/1A4168/ffffff?text=VINOVA+SOLUTIONS';">
-            </a>
-
-            <nav class="hidden md:flex items-center space-x-8 text-sm font-semibold text-vinova-navy">
-                <a href="#propos" class="hover:text-vinova-orange transition-colors">À propos</a>
+            <nav class="flex items-center space-x-6 sm:space-x-8 text-sm font-semibold text-vinova-navy">
+                <a href="#prosecco" class="hover:text-vinova-orange transition-colors">L'Offre</a>
                 <a href="#tarifs" class="hover:text-vinova-orange transition-colors">Tarifs & Économies</a>
                 <a href="#engagements" class="hover:text-vinova-orange transition-colors">Nos Engagements</a>
                 <a href="#calculateur" class="hover:text-vinova-orange transition-colors">Simulateur</a>
@@ -81,425 +78,53 @@
         </div>
     </header>
 
-    <section class="relative min-h-screen pt-28 pb-16 flex items-center justify-center hero-bg text-white overflow-hidden">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 py-12 grid lg:grid-cols-12 gap-12 items-center">
+    <!-- HERO SECTION AVEC LOGO EN GRAND EN HAUT & IMAGE VIGNOBLE + BOUTEILLE DE PROSECCO -->
+    <section id="prosecco" class="relative min-h-screen pt-28 pb-16 flex items-center justify-center hero-bg text-white overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 py-8">
             
-            <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
-                
-                <!-- Exact Tagline Banner -->
-                <div id="propos" class="inline-block p-4 rounded-2xl bg-white/10 backdrop-blur-md border border-white/20 text-left">
-                    <p class="text-xs uppercase text-vinova-orange font-extrabold tracking-widest mb-1">Vinova Solutions</p>
-                    <p class="text-sm sm:text-base text-slate-100 font-medium leading-relaxed">
-                        Votre partenaire pour le sourcing des meilleurs vins et spiritueux en France et à l'étranger.
-                    </p>
-                </div>
-
-                <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-vinova-orange/50 bg-vinova-orange/20 text-vinova-orangeLight text-xs font-semibold uppercase tracking-wider">
-                    <i class="fa-solid fa-wine-glass text-vinova-orange"></i> En provenance directe d'un Producteur Récoltant en Italie
-                </div>
-                
-                <h1 class="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight">
-                    Super OFFRE <br>
-                    <span class="orange-text-gradient">PROSECCO DOC</span><br> Spumante Extra Dry
-                </h1>
-                
-                <p class="text-lg sm:text-xl text-slate-200 font-light max-w-2xl mx-auto lg:mx-0">
-                    Vinova Solutions a négocié un prix super attractif pour un Prosecco DOC Spumante Extra Dry de très bonne qualité, produit par un récoltant passionné en Italie.
-                </p>
-
-                <div class="p-4 rounded-xl bg-white/10 border border-white/15 flex items-center gap-4 max-w-lg mx-auto lg:mx-0">
-                    <div class="w-10 h-10 rounded-lg bg-vinova-orange/30 text-vinova-orange flex items-center justify-center text-xl shrink-0">
-                        <i class="fa-solid fa-calendar-alt"></i>
-                    </div>
-                    <div class="text-left">
-                        <p class="text-xs uppercase text-vinova-orange font-bold tracking-wider">Période d'offre</p>
-                        <p class="text-sm text-slate-100">Commande dès aujourd'hui et <strong>jusqu'à la fin de l'année</strong>.</p>
-                    </div>
-                </div>
-
-                <div class="pt-2 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                    <a href="#devis" class="bg-vinova-orange hover:bg-vinova-orangeHover text-white font-bold px-8 py-4 rounded-xl text-center shadow-lg hover:shadow-vinova-orange/30 hover:scale-105 transition-all text-base">
-                        Demander un devis final <i class="fa-solid fa-arrow-right ml-2"></i>
-                    </a>
-                    <a href="#tarifs" class="border border-white/40 hover:bg-white/10 text-white font-semibold px-8 py-4 rounded-xl text-center transition-all text-base">
-                        Consulter les Tarifs
-                    </a>
+            <!-- GRAND LOGO CENTRAL DANS LA PREMIÈRE PARTIE DE LA PAGE -->
+            <div class="flex justify-center mb-8">
+                <div class="bg-white/95 backdrop-blur-md p-4 sm:p-6 rounded-2xl shadow-2xl border border-white/40 max-w-sm sm:max-w-md w-full flex justify-center">
+                    <img src="VS LOGO 02 fr.png" alt="Vinova Solutions" class="h-16 sm:h-20 w-auto object-contain">
                 </div>
             </div>
 
-            <!-- Hero Feature Card -->
-            <div class="lg:col-span-5 flex justify-center">
-                <div class="glass-card rounded-3xl p-8 text-vinova-navy shadow-2xl relative max-w-md w-full">
-                    <div class="absolute -top-4 -right-2 bg-vinova-orange text-white text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-wider shadow-md">
-                        Direct Récoltant 🇮🇹
+            <div class="grid lg:grid-cols-12 gap-12 items-center">
+                
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    
+                    <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-vinova-orange/60 bg-vinova-navyDark/70 text-vinova-orangeLight text-xs font-semibold uppercase tracking-wider backdrop-blur-sm">
+                        <i class="fa-solid fa-wine-glass text-vinova-orange"></i> En provenance directe d'un Producteur Récoltant en Italie
                     </div>
                     
-                    <div class="text-center pb-6 border-b border-slate-200">
-                        <div class="w-20 h-20 mx-auto mb-3 rounded-full bg-vinova-orange/10 flex items-center justify-center text-vinova-orange text-3xl">
-                            <i class="fa-solid fa-wine-bottle"></i>
-                        </div>
-                        <h3 class="font-serif text-2xl font-bold text-vinova-navy">Prosecco DOC Spumante</h3>
-                        <p class="text-xs text-vinova-orange font-bold uppercase tracking-widest mt-1">Extra Dry • Italie</p>
-                    </div>
-
-                    <div class="py-6 space-y-4">
-                        <div class="flex justify-between items-center text-sm">
-                            <span class="text-slate-600 font-medium">Conditionnement :</span>
-                            <span class="font-bold text-vinova-navy">480 bouteilles / palette</span>
-                        </div>
-                        <div class="flex justify-between items-center text-sm">
-                            <span class="text-slate-600 font-medium">Origine :</span>
-                            <span class="font-bold text-vinova-navy">Italie (Producteur Récoltant)</span>
-                        </div>
-                        <div class="flex justify-between items-center text-sm">
-                            <span class="text-slate-600 font-medium">Prix départ dès :</span>
-                            <span class="font-extrabold text-vinova-orange text-2xl">2,95 € <span class="text-xs font-normal text-slate-500">/ btle</span></span>
-                        </div>
-                    </div>
-
-                    <a href="#devis" class="w-full block text-center bg-vinova-navy hover:bg-vinova-navyDark text-white font-semibold py-3.5 rounded-xl transition-colors text-sm shadow-md">
-                        Livraison jusque dans vos entrepôts
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="tarifs" class="py-20 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-16">
-                <span class="text-vinova-orange font-bold text-xs uppercase tracking-widest">Grille Tarifaire Dégressive</span>
-                <h2 class="font-serif text-3xl sm:text-4xl font-bold text-vinova-navy mt-2">Tarifs Départ & Économies Réalisées</h2>
-                <p class="text-slate-600 mt-4">Un tarif direct départ propriété négocié pour maximiser vos marges.</p>
-            </div>
-
-            <div class="grid md:grid-cols-3 gap-8 items-stretch">
-                
-                <!-- 1 Palette Card -->
-                <div class="border border-slate-200 rounded-2xl p-8 bg-vinova-bgLight hover:border-vinova-orange transition-all duration-300 flex flex-col justify-between hover:shadow-xl">
-                    <div>
-                        <div class="text-xs font-extrabold text-slate-400 uppercase tracking-widest mb-2">Offre 1 Palette</div>
-                        <h3 class="font-serif text-2xl font-bold text-vinova-navy">1 Palette</h3>
-                        <p class="text-slate-500 text-sm mt-1">480 Bouteilles</p>
-                        
-                        <div class="my-6">
-                            <span class="text-4xl font-extrabold text-vinova-navy">3,20 €</span>
-                            <span class="text-slate-500 text-sm">/ bouteille HT</span>
-                            <p class="text-xs text-slate-500 mt-2">Total départ : <strong>1 536,00 € HT</strong></p>
-                        </div>
-
-                        <div class="p-4 rounded-xl bg-slate-200/60 text-slate-700 text-xs font-medium text-center">
-                            Tarif de référence départ propriété
-                        </div>
-                    </div>
-                    <a href="#devis" onclick="selectPaletteOption(1)" class="mt-8 block w-full text-center py-3.5 px-4 border border-vinova-navy text-vinova-navy font-bold rounded-xl hover:bg-vinova-navy hover:text-white transition-colors">
-                        Commander 1 Palette
-                    </a>
-                </div>
-
-                <!-- 2 Palettes Card -->
-                <div class="border-2 border-vinova-orange rounded-2xl p-8 bg-vinova-navy text-white shadow-2xl relative flex flex-col justify-between transform md:-translate-y-2">
-                    <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-vinova-orange text-white text-xs font-bold px-4 py-1 rounded-full uppercase tracking-wider shadow-md">
-                        Populaire
-                    </div>
-                    <div>
-                        <div class="text-xs font-extrabold text-vinova-orange uppercase tracking-widest mb-2">Offre 2 Palettes</div>
-                        <h3 class="font-serif text-2xl font-bold text-white">2 Palettes</h3>
-                        <p class="text-slate-300 text-sm mt-1">960 Bouteilles (480 / palette)</p>
-                        
-                        <div class="my-6">
-                            <span class="text-4xl font-extrabold text-vinova-orange">3,05 €</span>
-                            <span class="text-slate-300 text-sm">/ bouteille HT</span>
-                            <p class="text-xs text-slate-300 mt-2">Total départ : <strong>2 928,00 € HT</strong></p>
-                        </div>
-
-                        <!-- Savings Badge -->
-                        <div class="p-4 rounded-xl bg-vinova-orange/20 border border-vinova-orange/40 text-vinova-orangeLight text-xs font-bold flex items-center justify-center gap-2 text-center">
-                            <i class="fa-solid fa-piggy-bank text-base text-vinova-orange"></i>
-                            <span>Économie : <strong>0,15 € / btle</strong><br>soit <strong>144,00 € d'économie au total !</strong></span>
-                        </div>
-                    </div>
-                    <a href="#devis" onclick="selectPaletteOption(2)" class="mt-8 block w-full text-center py-3.5 px-4 bg-vinova-orange text-white font-bold rounded-xl hover:bg-vinova-orangeHover transition-colors shadow-lg">
-                        Commander 2 Palettes
-                    </a>
-                </div>
-
-                <!-- 3 Palettes Card -->
-                <div class="border border-slate-200 rounded-2xl p-8 bg-vinova-bgLight hover:border-vinova-orange transition-all duration-300 flex flex-col justify-between hover:shadow-xl">
-                    <div>
-                        <div class="text-xs font-extrabold text-slate-400 uppercase tracking-widest mb-2">Meilleur Tarif Volume</div>
-                        <h3 class="font-serif text-2xl font-bold text-vinova-navy">3 Palettes</h3>
-                        <p class="text-slate-500 text-sm mt-1">1 440 Bouteilles (480 / palette)</p>
-                        
-                        <div class="my-6">
-                            <span class="text-4xl font-extrabold text-vinova-navy">2,95 €</span>
-                            <span class="text-slate-500 text-sm">/ bouteille HT</span>
-                            <p class="text-xs text-slate-500 mt-2">Total départ : <strong>4 248,00 € HT</strong></p>
-                        </div>
-
-                        <!-- Savings Badge -->
-                        <div class="p-4 rounded-xl bg-emerald-100 border border-emerald-300 text-emerald-900 text-xs font-bold flex items-center justify-center gap-2 text-center">
-                            <i class="fa-solid fa-award text-base text-emerald-700"></i>
-                            <span>Économie : <strong>0,25 € / btle</strong><br>soit <strong>360,00 € d'économie au total !</strong></span>
-                        </div>
-                    </div>
-                    <a href="#devis" onclick="selectPaletteOption(3)" class="mt-8 block w-full text-center py-3.5 px-4 border border-vinova-navy text-vinova-navy font-bold rounded-xl hover:bg-vinova-navy hover:text-white transition-colors">
-                        Commander 3 Palettes
-                    </a>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <section id="engagements" class="py-20 bg-vinova-bgLight border-y border-slate-200">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-16">
-                <span class="text-vinova-orange font-bold text-xs uppercase tracking-widest">Valeurs & Services</span>
-                <h2 class="font-serif text-3xl sm:text-4xl font-bold text-vinova-navy mt-2">Les Engagements Vinova Solutions</h2>
-            </div>
-
-            <div class="grid md:grid-cols-3 gap-8">
-                
-                <!-- Card 1: Qualité des Produits -->
-                <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200 hover:shadow-md transition-shadow">
-                    <div class="w-14 h-14 rounded-2xl bg-vinova-orange/10 text-vinova-orange flex items-center justify-center text-2xl mb-6">
-                        <i class="fa-solid fa-wine-glass-stripe"></i>
-                    </div>
-                    <h3 class="font-serif text-xl font-bold text-vinova-navy mb-3">Qualité des Produits</h3>
-                    <p class="text-slate-600 text-sm leading-relaxed">
-                        Sélection rigoureuse de vignerons passionnés et de produits d'exception, garantissant authenticité, régularité et excellence gustative pour vos clients.
+                    <h1 class="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight drop-shadow-md">
+                        Super OFFRE <br>
+                        <span class="orange-text-gradient">PROSECCO DOC</span><br> Spumante Extra Dry
+                    </h1>
+                    
+                    <p class="text-lg sm:text-xl text-slate-100 font-light max-w-2xl mx-auto lg:mx-0 drop-shadow-sm">
+                        Vinova Solutions a négocié un prix super attractif pour un Prosecco DOC Spumante Extra Dry de très bonne qualité, produit par un récoltant passionné en Italie.
                     </p>
-                </div>
 
-                <!-- Card 2: Biodiversité, Éthique et Pratiques Durables -->
-                <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200 hover:shadow-md transition-shadow">
-                    <div class="w-14 h-14 rounded-2xl bg-emerald-50 text-emerald-600 flex items-center justify-center text-2xl mb-6">
-                        <i class="fa-solid fa-leaf"></i>
-                    </div>
-                    <h3 class="font-serif text-xl font-bold text-vinova-navy mb-3">Biodiversité & Éthique</h3>
-                    <p class="text-slate-600 text-sm leading-relaxed">
-                        Engagé pour le respect de la biodiversité, les pratiques écoresponsables et une éthique de travail irréprochable avec l'ensemble de nos partenaires récoltants.
-                    </p>
-                </div>
-
-                <!-- Card 3: Prise en Charge Logistique -->
-                <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200 hover:shadow-md transition-shadow">
-                    <div class="w-14 h-14 rounded-2xl bg-vinova-navy/10 text-vinova-navy flex items-center justify-center text-2xl mb-6">
-                        <i class="fa-solid fa-truck-ramp-box"></i>
-                    </div>
-                    <h3 class="font-serif text-xl font-bold text-vinova-navy mb-3">Prise en Charge Logistique</h3>
-                    <p class="text-slate-600 text-sm leading-relaxed">
-                        Gestion complète de la chaîne d'acheminement de bout en bout jusque dans vos entrepôts, en toute sérénité et sans aucune contrainte logistique pour vous.
-                    </p>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <section id="calculateur" class="py-16 bg-white">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="bg-vinova-navy rounded-3xl p-8 sm:p-12 text-white shadow-2xl relative overflow-hidden">
-                <div class="text-center mb-8">
-                    <h3 class="font-serif text-2xl sm:text-3xl font-bold">Simulateur de Commande</h3>
-                    <p class="text-slate-300 text-sm mt-2">Ajustez le nombre de palettes pour estimer votre budget départ propriété</p>
-                </div>
-
-                <div class="space-y-6">
-                    <div>
-                        <div class="flex justify-between items-center mb-2">
-                            <label class="text-sm font-semibold text-vinova-orange">Volume sélectionné :</label>
-                            <span id="paletteCountDisplay" class="font-serif font-bold text-2xl text-white">1 Palette</span>
+                    <div class="p-4 rounded-xl bg-vinova-navyDark/80 backdrop-blur-md border border-white/20 flex items-center gap-4 max-w-lg mx-auto lg:mx-0">
+                        <div class="w-10 h-10 rounded-lg bg-vinova-orange/30 text-vinova-orange flex items-center justify-center text-xl shrink-0">
+                            <i class="fa-solid fa-calendar-alt"></i>
                         </div>
-                        <input type="range" id="paletteRange" min="1" max="10" value="1" step="1" 
-                               class="w-full h-3 bg-vinova-navyDark rounded-lg appearance-none cursor-pointer accent-vinova-orange">
-                    </div>
-
-                    <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-4 border-t border-white/10 text-center">
-                        <div class="p-3 rounded-xl bg-white/10">
-                            <span class="block text-xs text-slate-300">Total Bouteilles</span>
-                            <span id="calcBouteilles" class="font-bold text-lg text-white">480 btles</span>
-                        </div>
-                        <div class="p-3 rounded-xl bg-white/10">
-                            <span class="block text-xs text-slate-300">Prix / Btle HT</span>
-                            <span id="calcPrixUnitaire" class="font-bold text-lg text-vinova-orange">3,20 €</span>
-                        </div>
-                        <div class="p-3 rounded-xl bg-white/10">
-                            <span class="block text-xs text-slate-300">Économie</span>
-                            <span id="calcEconomie" class="font-bold text-lg text-emerald-400">0,00 €</span>
-                        </div>
-                        <div class="col-span-2 sm:col-span-1 p-3 rounded-xl bg-white/10">
-                            <span class="block text-xs text-slate-300">Total Départ HT</span>
-                            <span id="calcTotal" class="font-bold text-lg text-white">1 536,00 €</span>
+                        <div class="text-left">
+                            <p class="text-xs uppercase text-vinova-orange font-bold tracking-wider">Période d'offre</p>
+                            <p class="text-sm text-slate-100">Commande dès aujourd'hui et <strong>jusqu'à la fin de l'année</strong>.</p>
                         </div>
                     </div>
 
-                    <div class="text-center pt-4">
-                        <a href="#devis" class="inline-block bg-vinova-orange hover:bg-vinova-orangeHover text-white font-bold px-8 py-3.5 rounded-xl transition-colors text-sm shadow-md">
-                            Demander un devis final pour ce volume
+                    <div class="pt-2 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                        <a href="#devis" class="bg-vinova-orange hover:bg-vinova-orangeHover text-white font-bold px-8 py-4 rounded-xl text-center shadow-lg hover:shadow-vinova-orange/30 hover:scale-105 transition-all text-base">
+                            Demander un devis final <i class="fa-solid fa-arrow-right ml-2"></i>
+                        </a>
+                        <a href="#tarifs" class="bg-vinova-navy/80 hover:bg-vinova-navy backdrop-blur-sm border border-white/40 text-white font-semibold px-8 py-4 rounded-xl text-center transition-all text-base">
+                            Consulter les Tarifs
                         </a>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
 
-    <section id="devis" class="py-20 bg-vinova-bgLight">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="bg-white rounded-3xl p-8 sm:p-12 shadow-xl border border-slate-200">
-                <div class="text-center max-w-2xl mx-auto mb-10">
-                    <span class="text-vinova-orange font-bold text-xs uppercase tracking-widest">Demande Directe</span>
-                    <h2 class="font-serif text-3xl font-bold text-vinova-navy mt-2">Obtenez votre Devis Final</h2>
-                    <p class="text-slate-600 text-sm mt-3">
-                        Contactez-nous dès aujourd'hui pour obtenir une offre personnalisée incluant la livraison direct jusque dans vos entrepôts.
-                    </p>
-                </div>
-
-                <form id="quoteForm" onsubmit="handleFormSubmit(event)" class="space-y-6">
-                    <div class="grid sm:grid-cols-2 gap-6">
-                        <div>
-                            <label class="block text-sm font-semibold text-slate-700 mb-2">Nom / Prénom *</label>
-                            <input type="text" required placeholder="Ex: Jean Dupont" class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:ring-2 focus:ring-vinova-orange focus:outline-none text-sm">
-                        </div>
-                        <div>
-                            <label class="block text-sm font-semibold text-slate-700 mb-2">Société / Entreprise *</label>
-                            <input type="text" required placeholder="Ex: Vinova Partner SARL" class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:ring-2 focus:ring-vinova-orange focus:outline-none text-sm">
-                        </div>
-                    </div>
-
-                    <div class="grid sm:grid-cols-2 gap-6">
-                        <div>
-                            <label class="block text-sm font-semibold text-slate-700 mb-2">Email Professionnel *</label>
-                            <input type="email" required placeholder="votre@entreprise.com" class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:ring-2 focus:ring-vinova-orange focus:outline-none text-sm">
-                        </div>
-                        <div>
-                            <label class="block text-sm font-semibold text-slate-700 mb-2">Téléphone *</label>
-                            <input type="tel" required placeholder="Ex: 01 23 45 67 89" class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:ring-2 focus:ring-vinova-orange focus:outline-none text-sm">
-                        </div>
-                    </div>
-
-                    <div class="grid sm:grid-cols-2 gap-6">
-                        <div>
-                            <label class="block text-sm font-semibold text-slate-700 mb-2">Quantité Souhaitée *</label>
-                            <select id="formPalettesSelect" class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:ring-2 focus:ring-vinova-orange focus:outline-none text-sm">
-                                <option value="1">1 Palette (480 btles - 3,20 €/btle)</option>
-                                <option value="2">2 Palettes (960 btles - 3,05 €/btle)</option>
-                                <option value="3">3 Palettes (1 440 btles - 2,95 €/btle)</option>
-                                <option value="4+">Plus de 3 Palettes (Offre Volume)</option>
-                            </select>
-                        </div>
-                        <div>
-                            <label class="block text-sm font-semibold text-slate-700 mb-2">Adresse / Ville de Livraison *</label>
-                            <input type="text" required placeholder="Pour le calcul exact de la livraison" class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:ring-2 focus:ring-vinova-orange focus:outline-none text-sm">
-                        </div>
-                    </div>
-
-                    <div>
-                        <label class="block text-sm font-semibold text-slate-700 mb-2">Précisions ou contraintes de livraison</label>
-                        <textarea rows="4" placeholder="Horaires de réception, accès hayon, etc." class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:ring-2 focus:ring-vinova-orange focus:outline-none text-sm"></textarea>
-                    </div>
-
-                    <div id="formSuccessMessage" class="hidden p-4 rounded-xl bg-emerald-100 border border-emerald-300 text-emerald-800 text-sm text-center font-medium">
-                        <i class="fa-solid fa-check-circle mr-2"></i> Votre demande a bien été envoyée ! Un conseiller Vinova Solutions prendra contact avec vous rapidement.
-                    </div>
-
-                    <button type="submit" class="w-full bg-vinova-orange hover:bg-vinova-orangeHover text-white font-bold py-4 rounded-xl transition-colors shadow-lg text-base">
-                        Envoyer ma demande de devis
-                    </button>
-                </form>
-            </div>
-        </div>
-    </section>
-
-    <footer class="bg-vinova-navy text-slate-300 py-12 border-t border-white/10">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-3 gap-8 pb-8 border-b border-white/10">
-            <div>
-                <img src="VS LOGO 02 fr.png" alt="Vinova Solutions" class="h-10 w-auto object-contain mb-4 bg-white p-2 rounded-lg" onerror="this.onerror=null; this.src='https://placehold.co/200x60/ffffff/1A4168?text=VINOVA';">
-                <p class="text-xs text-slate-300 leading-relaxed">
-                    Votre partenaire pour le sourcing des meilleurs vins et spiritueux en France et à l'étranger.
-                </p>
-            </div>
-
-            <div>
-                <h4 class="font-serif text-white font-semibold text-sm mb-4">Contact Direct</h4>
-                <ul class="space-y-2 text-xs text-slate-300">
-                    <li class="flex items-center gap-2">
-                        <i class="fa-solid fa-envelope text-vinova-orange"></i>
-                        <a href="mailto:contact@vinovasolutions.com" class="hover:text-vinova-orange transition-colors">contact@vinovasolutions.com</a>
-                    </li>
-                    <li class="flex items-center gap-2">
-                        <i class="fa-solid fa-globe text-vinova-orange"></i>
-                        <span>www.vinovasolutions.com</span>
-                    </li>
-                </ul>
-            </div>
-
-            <div>
-                <h4 class="font-serif text-white font-semibold text-sm mb-4">Offre Spéciale Prosecco</h4>
-                <p class="text-xs text-slate-300 leading-relaxed">
-                    Prosecco DOC Spumante Extra Dry en provenance directe d'un producteur récoltant en Italie. Offre valable jusqu'à la fin de l'année.
-                </p>
-            </div>
-        </div>
-
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 flex flex-col sm:flex-row justify-between items-center text-xs text-slate-400 gap-4">
-            <p>&copy; Vinova Solutions. Tous droits réservés.</p>
-            <p class="italic text-[11px]">L'abus d'alcool est dangereux pour la santé, à consommer avec modération.</p>
-        </div>
-    </footer>
-
-    <script>
-        const rangeInput = document.getElementById('paletteRange');
-        const countDisplay = document.getElementById('paletteCountDisplay');
-        const bouteillesDisplay = document.getElementById('calcBouteilles');
-        const unitPriceDisplay = document.getElementById('calcPrixUnitaire');
-        const economieDisplay = document.getElementById('calcEconomie');
-        const totalDisplay = document.getElementById('calcTotal');
-
-        function updateCalculator(palettes) {
-            const count = parseInt(palettes);
-            const bouteilles = count * 480;
-            let unitPrice = 3.20;
-
-            if (count === 2) {
-                unitPrice = 3.05;
-            } else if (count >= 3) {
-                unitPrice = 2.95;
-            }
-
-            const total = bouteilles * unitPrice;
-            const totalBasePrice = bouteilles * 3.20;
-            const totalEconomie = totalBasePrice - total;
-
-            countDisplay.innerText = `${count} Palette${count > 1 ? 's' : ''}`;
-            bouteillesDisplay.innerText = `${bouteilles.toLocaleString('fr-FR')} btles`;
-            unitPriceDisplay.innerText = `${unitPrice.toFixed(2).replace('.', ',')} €`;
-            economieDisplay.innerText = `${totalEconomie.toLocaleString('fr-FR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })} €`;
-            totalDisplay.innerText = `${total.toLocaleString('fr-FR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })} €`;
-        }
-
-        if (rangeInput) {
-            rangeInput.addEventListener('input', (e) => {
-                updateCalculator(e.target.value);
-            });
-        }
-
-        function selectPaletteOption(value) {
-            const selectEl = document.getElementById('formPalettesSelect');
-            if (selectEl) {
-                selectEl.value = value.toString();
-            }
-        }
-
-        function handleFormSubmit(event) {
-            event.preventDefault();
-            const messageBox = document.getElementById('formSuccessMessage');
-            if (messageBox) {
-                messageBox.classList.remove('hidden');
-                event.target.reset();
-            }
-        }
-    </script>
-</body>
-</html>
+                <!-- Hero Feature Card -->
+                <div class="lg
