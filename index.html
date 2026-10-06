@@ -40,7 +40,8 @@
 
     <style>
         .hero-bg {
-            background-image: linear-gradient(180deg, rgba(16, 42, 69, 0.20) 0%, rgba(26, 65, 104, 0.30) 100%), 
+            /* Overlay éclairci pour assurer une lisibilité parfaite des textes bleu navy */
+            background-image: linear-gradient(180deg, rgba(255, 255, 255, 0.85) 0%, rgba(247, 250, 252, 0.75) 100%), 
                               url('https://plus.unsplash.com/premium_photo-1663840297227-08642d8bafb8?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop');
             background-size: cover;
             background-position: center;
@@ -81,39 +82,43 @@
         </div>
     </header>
 
-    <section class="relative min-h-screen pt-28 pb-16 flex items-center justify-center hero-bg text-white overflow-hidden">
+    <section class="relative min-h-screen pt-28 pb-16 flex items-center justify-center hero-bg text-vinova-navy overflow-hidden">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 py-12 grid lg:grid-cols-12 gap-12 items-center">
             
             <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
                 
-                <!-- Exact Tagline Banner -->
-                <div id="propos" class="inline-block p-4 rounded-2xl bg-white/10 backdrop-blur-md border border-white/20 text-left">
+                <!-- Tagline Banner -->
+                <div id="propos" class="inline-block p-4 rounded-2xl bg-white/90 backdrop-blur-md border border-slate-200 shadow-sm text-left">
                     <p class="text-xs uppercase text-vinova-orange font-extrabold tracking-widest mb-1">Vinova Solutions</p>
+                    <!-- Texte passé en bleu navy -->
                     <p class="text-sm sm:text-base text-vinova-navy font-semibold leading-relaxed">
                         Votre partenaire pour le sourcing des meilleurs vins et spiritueux en France et à l'étranger.
                     </p>
                 </div>
 
-                <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-vinova-orange/50 bg-vinova-orange/20 text-vinova-orangeLight text-xs font-semibold uppercase tracking-wider">
+                <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-vinova-orange/30 bg-vinova-orange/10 text-vinova-orange text-xs font-bold uppercase tracking-wider">
                     <i class="fa-solid fa-wine-glass text-vinova-orange"></i> En provenance directe d'un Producteur Récoltant en Italie
                 </div>
                 
-                <h1 class="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight">
+                <!-- Titre principal en bleu navy avec accentuation orange -->
+                <h1 class="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight text-vinova-navy">
                     Super OFFRE <br>
                     <span class="orange-text-gradient">PROSECCO DOC</span><br> Spumante Extra Dry
                 </h1>
                 
-                <p class="text-lg sm:text-xl text-slate-200 font-light max-w-2xl mx-auto lg:mx-0">
+                <!-- Description passée en bleu navy -->
+                <p class="text-lg sm:text-xl text-vinova-navy font-medium max-w-2xl mx-auto lg:mx-0">
                     Vinova Solutions a négocié un prix super attractif pour un Prosecco DOC Spumante Extra Dry de très bonne qualité, produit par un récoltant passionné en Italie.
                 </p>
 
-                <div class="p-4 rounded-xl bg-white/10 border border-white/15 flex items-center gap-4 max-w-lg mx-auto lg:mx-0">
-                    <div class="w-10 h-10 rounded-lg bg-vinova-orange/30 text-vinova-orange flex items-center justify-center text-xl shrink-0">
+                <div class="p-4 rounded-xl bg-white/80 border border-slate-200 shadow-sm flex items-center gap-4 max-w-lg mx-auto lg:mx-0">
+                    <div class="w-10 h-10 rounded-lg bg-vinova-orange/20 text-vinova-orange flex items-center justify-center text-xl shrink-0">
                         <i class="fa-solid fa-calendar-alt"></i>
                     </div>
                     <div class="text-left">
                         <p class="text-xs uppercase text-vinova-orange font-bold tracking-wider">Période d'offre</p>
-                        <p class="text-sm text-slate-100">Commande dès aujourd'hui et <strong>jusqu'à la fin de l'année</strong>.</p>
+                        <!-- Texte d'offre passé en bleu navy -->
+                        <p class="text-sm text-vinova-navy font-medium">Commande dès aujourd'hui et <strong>jusqu'à la fin de l'année</strong>.</p>
                     </div>
                 </div>
 
@@ -121,7 +126,7 @@
                     <a href="#devis" class="bg-vinova-orange hover:bg-vinova-orangeHover text-white font-bold px-8 py-4 rounded-xl text-center shadow-lg hover:shadow-vinova-orange/30 hover:scale-105 transition-all text-base">
                         Demander un devis final <i class="fa-solid fa-arrow-right ml-2"></i>
                     </a>
-                    <a href="#tarifs" class="border border-white/40 hover:bg-white/10 text-white font-semibold px-8 py-4 rounded-xl text-center transition-all text-base">
+                    <a href="#tarifs" class="border border-vinova-navy hover:bg-vinova-navy/5 text-vinova-navy font-bold px-8 py-4 rounded-xl text-center transition-all text-base">
                         Consulter les Tarifs
                     </a>
                 </div>
@@ -165,6 +170,7 @@
         </div>
     </section>
 
+    <!-- Reste du code inchangé ... -->
     <section id="tarifs" class="py-20 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-3xl mx-auto mb-16">
@@ -261,7 +267,6 @@
 
             <div class="grid md:grid-cols-3 gap-8">
                 
-                <!-- Card 1: Qualité des Produits -->
                 <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200 hover:shadow-md transition-shadow">
                     <div class="w-14 h-14 rounded-2xl bg-vinova-orange/10 text-vinova-orange flex items-center justify-center text-2xl mb-6">
                         <i class="fa-solid fa-wine-glass-stripe"></i>
@@ -272,7 +277,6 @@
                     </p>
                 </div>
 
-                <!-- Card 2: Biodiversité, Éthique et Pratiques Durables -->
                 <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200 hover:shadow-md transition-shadow">
                     <div class="w-14 h-14 rounded-2xl bg-emerald-50 text-emerald-600 flex items-center justify-center text-2xl mb-6">
                         <i class="fa-solid fa-leaf"></i>
@@ -283,7 +287,6 @@
                     </p>
                 </div>
 
-                <!-- Card 3: Prise en Charge Logistique -->
                 <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200 hover:shadow-md transition-shadow">
                     <div class="w-14 h-14 rounded-2xl bg-vinova-navy/10 text-vinova-navy flex items-center justify-center text-2xl mb-6">
                         <i class="fa-solid fa-truck-ramp-box"></i>
